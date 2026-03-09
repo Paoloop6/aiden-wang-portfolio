@@ -29,8 +29,8 @@ import { Link } from "wouter";
 import { SnakeGame } from "@/components/games/snake-game";
 import { SolarSystemGame } from "@/components/games/solar-system";
 
-import plantaiDashboardPng from "/images/plantai-dashboard.png";
-import plantaiMobilePng from "/images/plantai-mobile.png";
+import plantaiDashboardPng from "/images/plantai-dashboard.jpg";
+import plantaiMobilePng from "/images/plantai-mobile.jpg";
 
 const NAV_ITEMS = [
   { label: "About", href: "#about" },
