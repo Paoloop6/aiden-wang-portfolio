@@ -30,10 +30,10 @@ import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
 import { Link } from "wouter";
 
-import heroPng from "/images/plantai-hero.png";
-import dashboardPng from "/images/plantai-dashboard.png";
-import mobilePng from "/images/plantai-mobile.png";
-import teamPng from "/images/plantai-team.png";
+import heroPng from "/images/plantai-hero.jpg";
+import dashboardPng from "/images/plantai-dashboard.jpg";
+import mobilePng from "/images/plantai-mobile.jpg";
+import teamPng from "/images/plantai-team.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
