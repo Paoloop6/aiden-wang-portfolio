@@ -35,7 +35,7 @@ const PLANETS: PlanetData[] = [
     radius: 0.35,
     distance: 6,
     color: "#8C7853",
-    orbitSpeed: 0.048,
+    orbitSpeed: 0.006,
     facts: {
       diameter: "4,879 km",
       distanceFromSun: "57.9M km",
@@ -50,7 +50,7 @@ const PLANETS: PlanetData[] = [
     radius: 0.8,
     distance: 9,
     color: "#FFC649",
-    orbitSpeed: 0.035,
+    orbitSpeed: 0.005,
     facts: {
       diameter: "12,104 km",
       distanceFromSun: "108.2M km",
@@ -65,7 +65,7 @@ const PLANETS: PlanetData[] = [
     radius: 0.85,
     distance: 12.5,
     color: "#4A90E2",
-    orbitSpeed: 0.03,
+    orbitSpeed: 0.004,
     facts: {
       diameter: "12,742 km",
       distanceFromSun: "149.6M km",
@@ -80,7 +80,7 @@ const PLANETS: PlanetData[] = [
     radius: 0.45,
     distance: 16,
     color: "#E27B58",
-    orbitSpeed: 0.024,
+    orbitSpeed: 0.003,
     facts: {
       diameter: "6,779 km",
       distanceFromSun: "227.9M km",
@@ -95,7 +95,7 @@ const PLANETS: PlanetData[] = [
     radius: 2.2,
     distance: 22,
     color: "#C88B3A",
-    orbitSpeed: 0.013,
+    orbitSpeed: 0.004,
     facts: {
       diameter: "139,820 km",
       distanceFromSun: "778.5M km",
@@ -110,7 +110,7 @@ const PLANETS: PlanetData[] = [
     radius: 1.8,
     distance: 30,
     color: "#FAD5A5",
-    orbitSpeed: 0.009,
+    orbitSpeed: 0.003,
     hasRing: true,
     facts: {
       diameter: "116,460 km",
@@ -126,7 +126,7 @@ const PLANETS: PlanetData[] = [
     radius: 1.3,
     distance: 38,
     color: "#4FD0E7",
-    orbitSpeed: 0.006,
+    orbitSpeed: 0.002,
     facts: {
       diameter: "50,724 km",
       distanceFromSun: "2.9B km",
@@ -141,7 +141,7 @@ const PLANETS: PlanetData[] = [
     radius: 1.2,
     distance: 45,
     color: "#5B5DDF",
-    orbitSpeed: 0.004,
+    orbitSpeed: 0.0013,
     facts: {
       diameter: "49,244 km",
       distanceFromSun: "4.5B km",
@@ -222,8 +222,8 @@ function Planet({
         <sphereGeometry args={[data.radius, 32, 32]} />
         <meshStandardMaterial
           color={data.color}
-          emissive={isSelected ? data.color : "#000000"}
-          emissiveIntensity={isSelected ? 0.4 : 0}
+          emissive={data.color}
+          emissiveIntensity={isSelected ? 0.6 : 0.35}
         />
       </mesh>
       {data.hasRing && (
@@ -260,7 +260,7 @@ function Sun() {
         <sphereGeometry args={[3, 32, 32]} />
         <meshBasicMaterial color="#FDB813" transparent opacity={0.15} />
       </mesh>
-      <pointLight position={[0, 0, 0]} intensity={2} distance={120} color="#FDB813" />
+      <pointLight position={[0, 0, 0]} intensity={3} distance={150} color="#FDB813" />
     </group>
   );
 }
@@ -283,7 +283,7 @@ function Scene({
         zoomSpeed={0.6}
         rotateSpeed={0.5}
       />
-      <ambientLight intensity={0.15} />
+      <ambientLight intensity={0.3} />
       <Stars radius={100} depth={60} count={3000} factor={3} saturation={0} fade speed={0.5} />
       <Sun />
       {PLANETS.map((p) => (
