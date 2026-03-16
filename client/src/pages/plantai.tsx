@@ -30,7 +30,6 @@ import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
 import { Link } from "wouter";
 
-import heroPng from "/images/plantai-hero.jpg";
 import dashboardPng from "/images/plantai-dashboard.jpg";
 import mobilePng from "/images/plantai-mobile.jpg";
 import teamPng from "/images/plantai-team.jpg";
@@ -180,14 +179,7 @@ function Navbar() {
 function HeroSection() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={heroPng}
-          alt="PlantAI Health abstract illustration"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-background" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-green-950 via-green-900/80 to-background" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
         <motion.div {...fadeUp}>
@@ -304,16 +296,6 @@ function OverviewSection() {
             </div>
           </motion.div>
 
-          <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.15 }}>
-            <div className="rounded-md overflow-hidden border border-border">
-              <img
-                src={dashboardPng}
-                alt="PlantAI Health dashboard interface"
-                className="w-full h-auto"
-                data-testid="img-plantai-dashboard"
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
