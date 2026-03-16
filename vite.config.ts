@@ -30,6 +30,18 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/three/")) return "three-core";
+          if (id.includes("@react-three/fiber")) return "three-fiber";
+          if (id.includes("@react-three/drei")) return "three-drei";
+          if (id.includes("node_modules/react-dom") || id.includes("node_modules/react/")) return "vendor-react";
+          if (id.includes("framer-motion")) return "vendor-motion";
+          if (id.includes("@radix-ui")) return "vendor-ui";
+        },
+      },
+    },
   },
   server: {
     fs: {
